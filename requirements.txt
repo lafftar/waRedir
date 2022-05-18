@@ -1,0 +1,15 @@
+colorama~=0.4.4
+aiohttp~=3.7.4.post0
+aiofiles~=0.8.0
+httpx~=0.22.0
+bs4~=0.0.1
+beautifulsoup4~=4.11.1
+Faker~=13.6.0
+discord~=1.7.3
+anyio~=3.5.0
+orjson~=3.6.8
+SQLAlchemy~=1.4.36
+fastapi~=0.75.2
+httpcore~=0.14.7
+uvicorn~=0.17.6
+pydantic~=1.9.0
