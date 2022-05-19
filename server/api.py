@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from starlette.requests import Request
-from starlette.responses import FileResponse
+from starlette.responses import FileResponse, RedirectResponse
 from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 
@@ -25,10 +25,15 @@ async def root(request: Request):
     )
 
 
+@app.get('/redirect/{url}')
+async def redirect(url: str) -> RedirectResponse:
+    return RedirectResponse(url=url)
+
+
 @app.get('/favicon.ico')
 async def favicon():
     return FileResponse(f'{get_project_root()}/server/static/ico/favicon.ico')
 
 
 if __name__ == "__main__":
-    uvicorn.run('api:app', host='localhost', port=1338, reload=True)
+    uvicorn.run('api:app', host='0.0.0.0', port=1338, reload=True)

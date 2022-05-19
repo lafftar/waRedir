@@ -13,9 +13,9 @@ form.onsubmit = (e) => {
   for (const match of phone_numbers) {
     let wa_link = `https://wa.me/${match[0].trim()}`
     console.log(wa_link)
-    window.location.replace("http://stackoverflow.com");
-    window.location.href = 'https://www.google.com'
-    document.write('<br />');
+    document.querySelector('div').innerHTML = `<h1><a href="${wa_link}" target="_blank">wa.me</a></h1>`
+    console.log(phone_numbers)
+    return;
   }
   console.log(phone_numbers);
   return
