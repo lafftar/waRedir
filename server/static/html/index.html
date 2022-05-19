@@ -26,19 +26,41 @@
    text-align: center;
 }
 
-div, input{
-    width: 30em;
-    height: 4em;
+input:hover, a:hover{
+  background-color: rgba(194, 185, 239, 0.3);
 }
-div{
-  position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
+
+a, input {
+  font-weight: bold;
+  font-size: 3vw;
+  text-shadow: 0.2vw 0.2vw 1vw lightslategrey;
+  color: whitesmoke;
+  text-align: center;
+}
+
+input:hover{
+  box-shadow: 1px 1px 30px 10px rgba(194, 185, 239, 0.9);
+  background-color: rgba(194, 185, 239, 0.3);
+}
+
+input{
+  height: 4vw;
+  width: 30vw;
+  left: 50%;
+  top: 50%;
+  box-shadow: 1px 1px 30px 10px rgba(0,0,0,.1);
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
   </style>
-  <div><form><label>
-    <input type="text" placeholder="..." autofocus>
-  </label></form></div>
+  <div class="container">
+    <form>
+        <input type="text" autofocus>
+    </form>
+  </div>
   </body>
