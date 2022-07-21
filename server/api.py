@@ -17,6 +17,10 @@ app.mount(
     name="static",
 )
 
+@app.get('/')
+async def home():
+    return "We Live."
+
 @app.get("/wa")
 async def root(request: Request):
     return TEMPLATES.TemplateResponse(
