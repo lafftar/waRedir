@@ -1,4 +1,4 @@
-input:hover{
+input:hover, textarea:hover{
   box-shadow: 1px 1px 30px 10px rgba(194, 185, 239, 0.9);
   background-color: rgba(194, 185, 239, 0.3);
 }
