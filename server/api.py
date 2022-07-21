@@ -17,10 +17,10 @@ app.mount(
     name="static",
 )
 
-@app.get("/")
+@app.get("/wa")
 async def root(request: Request):
     return TEMPLATES.TemplateResponse(
-        "index.html",
+        "wa.html",
         {"request": request},
     )
 

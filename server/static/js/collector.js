@@ -1,23 +1,11 @@
-
-window.addEventListener("load", function(){
-    //everything is fully loaded, don't use me if you can use DOMContentLoaded
-    var form = document.querySelector("form");
-form.onsubmit = (e) => {
-  e.preventDefault();
-  var input = e.target.querySelector("input");
-  const string = input.value;
-  console.log(input.value)
-  let phone_numbers = [];
-  const regexp = new RegExp("\\+?\\(?\\d*\\)? ?\\(?\\d+\\)?\\d*([\\s./-]?\\d{2,})+","g");
-  phone_numbers = [...string.matchAll(regexp)];
-  for (const match of phone_numbers) {
-    let wa_link = `https://api.whatsapp.com/send/?phone=${match[0].trim()}&text=hola%20amor,%20tj%20from%20tinder&app_absent=0`
-    console.log(wa_link)
-    document.querySelector('div').innerHTML = `<h1><a href="${wa_link}" target="_blank">wa.me</a></h1>`
-    console.log(phone_numbers)
-    return;
-  }
-  console.log(phone_numbers);
-  return
+function makeLink() {
+  let number_input = document.getElementById("number");
+  let message_input = document.getElementById("message");
+  let number = number_input.value.trim().replace(/\D/g,'');
+  let message = message_input.value.trim();
+  console.log(number, message)
+  let wa_link = `https://api.whatsapp.com/send/?phone=${number}&text=${message}&app_absent=0`
+  console.log(wa_link)
+  document.getElementById('wa_link').innerHTML = wa_link
+  document.getElementById('wa_link').href = wa_link
 }
-});
